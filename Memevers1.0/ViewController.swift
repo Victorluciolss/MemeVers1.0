@@ -24,11 +24,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white,
         NSAttributedString.Key.font: UIFont(name: "Impact", size: 40)!,
-        NSAttributedString.Key.strokeWidth: -5.0    ]
+        NSAttributedString.Key.strokeWidth: -5.0
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageView.contentMode = UIView.ContentMode.scaleAspectFill
         defineTextField(textFieldTop, "TOP")
         defineTextField(textFieldBottom, "BOTTOM")
         
@@ -50,15 +50,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     @IBAction func pickAnImage(_ sender: Any) {
-        let imagePicker = UIImagePickerController ()
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+        pickImage(source: .photoLibrary)
     }
     
     @IBAction func pickImageCamera(_ sender: Any) {
+        pickImage(source: .camera)
+    }
+    
+    func pickImage(source: UIImagePickerController.SourceType) {
         let imagePicker = UIImagePickerController ()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -67,7 +69,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         let image = generateMemedImage()
         let activityVC = UIActivityViewController(activityItems:[image], applicationActivities: nil)
         activityVC.completionWithItemsHandler = {(activity, success, items, error) in
-            if (success == true) {
+            if success {
                 self.save()
                 self.dismiss(animated: true, completion: nil)
             } else if (error != nil) {
@@ -92,8 +94,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     func defineTextField(_ textField: UITextField,_ text: String) {
         textField.delegate = self
         textField.text = text
-        textField.textAlignment = .center
         textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -113,13 +115,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
         
     }
     func unsubscribeFromKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     
     @objc func keyboardWillShow(_ notification:Notification)  {
-        view.frame.origin.y = 0
-        if(textFieldBottom.isTouchInside == true) {
+        if textFieldBottom.isFirstResponder {
             view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
@@ -155,26 +155,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate & UINavi
     }
     
     func generateMemedImage() -> UIImage {
-        toolbarBottom.isHidden = true
-        toolbarTop.isHidden = true
+        hideShow(true)
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        toolbarBottom.isHidden = false
-        toolbarTop.isHidden = false
+        hideShow(false)
         
         return memedImage
+    }
+    
+    func hideShow(_ isHidden: Bool) {
+        toolbarBottom.isHidden = isHidden
+        toolbarTop.isHidden = isHidden
     }
 }
 
 
-struct Meme {
-    var topText: String
-    var bottomText: String
-    var originalImage: UIImage
-    var memedImage: UIImage
-}
+
+
 

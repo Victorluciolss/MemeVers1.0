@@ -36,13 +36,13 @@
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cY8-cA-k2L">
-                                <rect key="frame" x="155" y="758" width="106" height="30"/>
+                                <rect key="frame" x="10" y="756.5" width="394" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-jZ-nqm" userLabel="Text Field Top">
-                                <rect key="frame" x="159" y="108" width="97" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <rect key="frame" x="10" y="108" width="394" height="31.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0f9-WD-9Fa" userLabel="ToolbarTop">
@@ -66,21 +66,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="37j-Sm-D3T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5xB-8j-iVT"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cY8-cA-k2L" secondAttribute="trailing" constant="153" id="DxH-Gi-xJf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cY8-cA-k2L" secondAttribute="trailing" constant="10" id="DxH-Gi-xJf"/>
                             <constraint firstItem="wGP-f7-V7m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="JJi-pU-v4l"/>
                             <constraint firstItem="wGP-f7-V7m" firstAttribute="leading" secondItem="37j-Sm-D3T" secondAttribute="leading" id="Mf5-SK-ABs"/>
-                            <constraint firstItem="cY8-cA-k2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="155" id="Ot8-u4-cEm"/>
+                            <constraint firstItem="cY8-cA-k2L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Ot8-u4-cEm"/>
                             <constraint firstItem="wGP-f7-V7m" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="R1a-7Q-hnd"/>
                             <constraint firstItem="0f9-WD-9Fa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="TFv-oH-VcC"/>
                             <constraint firstItem="0f9-WD-9Fa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="WrC-PJ-vS3"/>
                             <constraint firstItem="37j-Sm-D3T" firstAttribute="top" secondItem="wGP-f7-V7m" secondAttribute="bottom" id="agd-67-1BK"/>
                             <constraint firstItem="37j-Sm-D3T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dKr-XL-4q1"/>
                             <constraint firstItem="Uhi-jZ-nqm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="gdA-Yd-SeD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uhi-jZ-nqm" secondAttribute="trailing" constant="158" id="nOL-MT-mWe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Uhi-jZ-nqm" secondAttribute="trailing" constant="10" id="nOL-MT-mWe"/>
                             <constraint firstItem="37j-Sm-D3T" firstAttribute="top" secondItem="cY8-cA-k2L" secondAttribute="bottom" constant="25" id="peS-Yh-ymj"/>
                             <constraint firstItem="0f9-WD-9Fa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rLz-L1-QP3"/>
                             <constraint firstItem="wGP-f7-V7m" firstAttribute="trailing" secondItem="37j-Sm-D3T" secondAttribute="trailing" id="tJ5-nl-fRR"/>
-                            <constraint firstItem="Uhi-jZ-nqm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="wHE-38-1z2"/>
+                            <constraint firstItem="Uhi-jZ-nqm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="wHE-38-1z2"/>
                             <constraint firstItem="37j-Sm-D3T" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xwv-rx-b9e"/>
                         </constraints>
                     </view>
